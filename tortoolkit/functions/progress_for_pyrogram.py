@@ -53,7 +53,7 @@ async def progress_for_pyrogram(
         elapsed_time = human_readable_timedelta(elapsed_time)
         estimated_total_time = human_readable_timedelta(estimated_total_time)
 
-        progress = "[{0}{1}] \nP: {2}%\n".format(
+        progress = "[{0}{1}] \n\n**🔩 Percent**: 〈{2}%〉\n\n".format(
             "".join(
                 [get_val("COMPLETED_STR") for _ in range(math.floor(percentage / 10))]
             ),
@@ -68,7 +68,7 @@ async def progress_for_pyrogram(
 
         tmp = (
             progress
-            + "{0} of {1}\nSpeed: {2}/s\nETA: {3}\nUsing engine: Pyrogram".format(
+            + "**📤 Done ✓**:{0}\n\n**🥏 Total:** {1}\n\n🚀 **Speed**: {2}/s\n\n** 🕛ETA:** {3}\n\n** 🖥️Using engine:** Pyrogram".format(
                 human_readable_bytes(current),
                 human_readable_bytes(total),
                 human_readable_bytes(speed),
@@ -78,12 +78,12 @@ async def progress_for_pyrogram(
         try:
             if not message.photo:
                 await message.edit_text(
-                    text="**Uploading:** `{}`\n{}".format(ud_type, tmp),
+                    text="**Uploading..⏳** `{}`\n{}".format(ud_type, tmp),
                     reply_markup=markup,
                 )
             else:
                 await message.edit_caption(
-                    caption="**Uploading:** `{}`\n{}".format(ud_type, tmp),
+                    caption="**Uploading..⏳** `{}`\n{}".format(ud_type, tmp),
                     reply_markup=markup,
                 )
             await asyncio.sleep(4)
