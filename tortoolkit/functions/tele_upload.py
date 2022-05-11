@@ -54,7 +54,7 @@ async def upload_handel(
         # Central object is not used its Acknowledged
         updb = TtkUpload()
 
-    # logging.info("Uploading Now:- {}".format(path))
+    # logging.info("Uploading..Now ⏳:- {}".format(path))
 
     if os.path.isdir(path):
         logging.info("Uploading the directory:- {}".format(path))
@@ -126,7 +126,7 @@ async def upload_handel(
             updb.deregister_upload(message.chat_id, message.id)
 
     else:
-        logging.info("Uploading the file:- {}".format(path))
+        logging.info("Uploading the file ⏳: {}".format(path))
         if os.path.getsize(path) > get_val("TG_UP_LIMIT"):
             # the splitted file will be considered as a single upload ;)
 
@@ -311,7 +311,7 @@ async def upload_a_file(
             message.chat_id, message.id, user_msg.sender_id
         )
         buts = [KeyboardButtonCallback("Cancel upload.", data.encode("UTF-8"))]
-        msg = await message.reply("**Uploading:** `{}`".format(file_name), buttons=buts)
+        msg = await message.reply("**Uploading..⏳**\n\n★ `{}`".format(file_name), buttons=buts)
 
     else:
         msg = message
@@ -554,7 +554,7 @@ async def upload_single_file(
                 ]
             )
             message_for_progress_display = await message.reply_text(
-                "**Starting upload of** `{}`".format(os.path.basename(path)),
+                "**✅ Starting upload of**: `{}`".format(os.path.basename(path)),
                 reply_markup=markup,
             )
 
