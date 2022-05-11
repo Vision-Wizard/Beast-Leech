@@ -257,7 +257,7 @@ async def handle_user_settings(e, edit=False, msg="", submenu=None, sender_id=No
             menu.append(
                 [
                     KeyboardButtonCallback(
-                        "Close Menu", f"usettings selfdest {sender_id}".encode("UTF-8")
+                        "Close Menu ❌", f"usettings selfdest {sender_id}".encode("UTF-8")
                     )
                 ]
             )
@@ -280,7 +280,7 @@ async def handle_user_settings(e, edit=False, msg="", submenu=None, sender_id=No
             menu.append(
                 [
                     KeyboardButtonCallback(
-                        "Close Menu", f"usettings selfdest {sender_id}".encode("UTF-8")
+                        "Close Menu ❌", f"usettings selfdest {sender_id}".encode("UTF-8")
                     )
                 ]
             )
