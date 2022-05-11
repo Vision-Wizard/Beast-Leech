@@ -252,14 +252,14 @@ def add_handlers(bot: TelegramClient):
 
 async def handle_leech_command(e):
     if not e.is_reply:
-        await e.reply("Reply to a link or magnet")
+        await e.reply("Rᴇᴘʟʏ ᴛᴏ ᴀ Dɪʀᴇᴄᴛ ᴏʀ Mᴀɢɴᴇᴛ Lɪɴᴋ)
     else:
         rclone = False
         tsp = time.time()
-        buts = [[KeyboardButtonCallback("To Telegram", data=f"leechselect tg {tsp}")]]
+        buts = [[KeyboardButtonCallback("Upload to Telegram 🌴 ", data=f"leechselect tg {tsp}")]]
         if await get_config() is not None:
             buts.append(
-                [KeyboardButtonCallback("To Drive", data=f"leechselect drive {tsp}")]
+                [KeyboardButtonCallback("Upload to Cloud ☁️", data=f"leechselect drive {tsp}")]
             )
         # tsp is used to split the callbacks so that each download has its own callback
         # cuz at any time there are 10-20 callbacks linked for leeching XD
@@ -267,14 +267,14 @@ async def handle_leech_command(e):
         buts.append(
             [
                 KeyboardButtonCallback(
-                    "Upload in a ZIP.[Toggle]", data=f"leechzip toggle {tsp}"
+                    "Upload as ZIP 🤐", data=f"leechzip toggle {tsp}"
                 )
             ]
         )
         buts.append(
             [
                 KeyboardButtonCallback(
-                    "Extract from Archive.[Toggle]", data=f"leechzipex toggleex {tsp}"
+                    "Extract from Archivee 🔗", data=f"leechzipex toggleex {tsp}"
                 )
             ]
         )
