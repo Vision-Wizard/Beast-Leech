@@ -252,7 +252,7 @@ def add_handlers(bot: TelegramClient):
 
 async def handle_leech_command(e):
     if not e.is_reply:
-        await e.reply("Rᴇᴘʟʏ ᴛᴏ ᴀ Dɪʀᴇᴄᴛ ᴏʀ Mᴀɢɴᴇᴛ Lɪɴᴋ)
+        await e.reply("Rᴇᴘʟʏ ᴛᴏ ᴀ Dɪʀᴇᴄᴛ ᴏʀ Mᴀɢɴᴇᴛ Lɪɴᴋ")
     else:
         rclone = False
         tsp = time.time()
