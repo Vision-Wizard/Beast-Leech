@@ -20,11 +20,11 @@
     },
     "BASE_URL_OF_BOT": {
       "description": "https://appname.herokuapp.com",
-      "value": ""
+      "value": "https://appname.herokuapp.com"
     },
     "AUTH_CHANNEL": {
       "description": "ALLOWED USERS [ids of user or supergroup] seperate by spaces",
-      "value": "-1001281285012"
+      "value": "-1001281285012 1196263968"
     },
     "GD_INDEX_URL": {
       "description": "gdrive index link",
@@ -63,7 +63,7 @@
     },
     "RCLONE_BASE_DIR": {
       "description": "The base direcory to which the files will be upload if using rclone",
-      "value": "/",
+      "value": "1BPEFRmxxCsD4VeeJe82D_6qBTg4o98qS",
       "required": false
     },
     "MAX_YTPLAYLIST_SIZE": {
@@ -104,6 +104,7 @@
     },
     "OWNER_ID": {
       "description": "Used to restrict use of certain stuff to owner only.",
+      "value": "1196263968",
       "required": false
     } 
   },
