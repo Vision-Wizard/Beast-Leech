@@ -26,6 +26,10 @@
       "description": "ALLOWED USERS [ids of user or supergroup] seperate by spaces",
       "value": "-1001281285012 1196263968"
     },
+    "ALD_USR": {
+      "description": "Private Access",
+      "value": "-1001281285012 1196263968"
+    },
     "GD_INDEX_URL": {
       "description": "gdrive index link",
       "value": "https://drive.hanif-maxx.workers.dev/1:/Maxx-TD/",
