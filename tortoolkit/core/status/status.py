@@ -69,22 +69,21 @@ class QBTask(Status):
 
     async def create_message(self):
         msg = "<b>📁 File Name :</b> <code>{}</code>\n".format(self._torrent.name)
-        msg += "<b>🚀 Speed:</b> {}\n".format(
-            human_readable_bytes(self._torrent.dlspeed, postfix="/s")
-            #human_readable_bytes(self._torrent.upspeed, postfix="/s"),
-        )
-        msg += "<b>Progress:</b> {} - {}%\n".format(
+        msg += "{} -  ({}%)\n\n".format(
             self.progress_bar(self._torrent.progress),
             round(self._torrent.progress * 100, 2),
         )
-        msg += "<b>📤 Done ✓:</b> {}\n<b>🥏 Total</b>:  {}\n".format(
+        msg += "<b>🚀 Speed:</b> {}\n\n".format(
+            human_readable_bytes(self._torrent.dlspeed, postfix="/s")
+        )
+        msg += "<b>📤 Done ✓:</b> {}\n\n<b>🥏 Total</b>:  {}\n\n".format(
             human_readable_bytes(self._torrent.downloaded),
             human_readable_bytes(self._torrent.total_size),
         )
-        msg += "<b> 🕛 ETA:</b> <b>{}</b>\n".format(
+        msg += "<b> 🕛 ETA:</b> <b>{}</b>\n\n".format(
             human_readable_timedelta(self._torrent.eta)
         )
-        msg += "<b>☘️ S:</b>{} <b>⚰️ :</b>{}\n".format(
+        msg += "<b>☘️ S:</b>{} <b>⚰️ :</b>{}\n\n".format(
             self._torrent.num_seeds, self._torrent.num_leechs
         )
         msg += "<b>🖥️ Using engine:</b> <code>qBittorrent</code>"
@@ -230,19 +229,19 @@ class ARTask(Status):
             pass
 
         msg = "<b>📁 File Name:</b> <code>{}</code>\n".format(downloading_dir_name)
-        msg += "<b>🚀 Speed:</b> {}\n".format(
-            self._dl_file.download_speed_string(), self._dl_file.upload_speed_string()
-        )
-        msg += "<b>Progress:</b> {} - {}%\n".format(
+        msg += " {} -  ({}%)\n\n".format(
             self.progress_bar(self._dl_file.progress / 100),
             round(self._dl_file.progress, 2),
         )
-        msg += "<b>📤 Done ✓:</b> {}\n<b>🥏 Total:</b> {}\n".format(
+        msg += "<b>🚀 Speed:</b> {}\n\n".format(
+            self._dl_file.download_speed_string(), self._dl_file.upload_speed_string()
+        )
+        msg += "<b>📤 Done ✓:</b> {}\n\n<b>🥏 Total:</b> {}\n\n".format(
             human_readable_bytes(self._dl_file.completed_length),
             human_readable_bytes(self._dl_file.total_length),
         )
-        msg += "<b>🕛 ETA:</b> <b>{}</b>\n".format(self._dl_file.eta_string())
-        msg += "<b>🗼 Conns:</b>{} <b>\n".format(self._dl_file.connections)
+        msg += "<b>🕛 ETA:</b> <b>{}</b>\n\n".format(self._dl_file.eta_string())
+        msg += "<b>🗼 Conns:</b>{} <b>\n\n".format(self._dl_file.connections)
         msg += "<b>🖥️ Using engine:</b> <code>Aria2 For DirectLinks</code>"
 
         return msg
