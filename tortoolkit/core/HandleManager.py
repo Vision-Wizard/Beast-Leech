@@ -816,8 +816,8 @@ async def about_me(message):
         f"<b>Version</b>: <code>{__version__}</code>\n"
         f"<b>Telethon Version</b>: {telever}\n"
         f"<b>Pyrogram Version</b>: {pyrover}\n"
-        "<b>Created By</b>: @Yaknight\n\n"
-        "<b>Modified By</b>: @KangersHub\n\n"
+        "<b>Maintained By</b>: @telegram\n\n"
+        "<b>Powerd By</b>: @TGFilmZone\n\n"
         "<u>Currents Configs:-</u>\n\n"
         f"<b>Bot Uptime:-</b> {diff}\n"
         "<b>Torrent Download Engine:-</b> <code>qBittorrent [4.3.0 fix active]</code> \n"
@@ -850,13 +850,13 @@ async def about_me(message):
 async def set_thumb_cmd(e):
     thumb_msg = await e.get_reply_message()
     if thumb_msg is None:
-        await e.reply("Reply to a photo or photo as a document.")
+        await e.reply("Rᴇᴘʟʏ ᴛᴏ ᴀ ᴘʜᴏᴛᴏ ᴏʀ ᴘʜᴏᴛᴏ ᴀs ᴀ ᴅᴏᴄᴜᴍᴇɴᴛ.")
         return
 
     if thumb_msg.document is not None or thumb_msg.photo is not None:
         value = await thumb_msg.download_media()
     else:
-        await e.reply("Reply to a photo or photo as a document.")
+        await e.reply("Rᴇᴘʟʏ ᴛᴏ ᴀ ᴘʜᴏᴛᴏ ᴏʀ ᴘʜᴏᴛᴏ ᴀs ᴀ ᴅᴏᴄᴜᴍᴇɴᴛ..")
         return
 
     try:
@@ -881,14 +881,14 @@ async def set_thumb_cmd(e):
 
     user_db.set_var("DISABLE_THUMBNAIL", False, str(e.sender_id))
     await e.reply(
-        "Thumbnail set. try using /usettings to get more control. Can be used in private too."
+        "𝘛𝘩𝘶𝘮𝘣𝘯𝘢𝘪𝘭 𝘚𝘢𝘷𝘦𝘥 ✅. \n\n👉 𝑻𝒓𝒚 𝒖𝒔𝒊𝒏𝒈 /settings 𝒕𝒐 𝒈𝒆𝒕 𝒎𝒐𝒓𝒆 𝒄𝒐𝒏𝒕𝒓𝒐𝒍"
     )
 
 
 async def clear_thumb_cmd(e):
     user_db.set_var("DISABLE_THUMBNAIL", True, str(e.sender_id))
     await e.reply(
-        "Thumbnail disabled. Try using /usettings to get more control. Can be used in private too."
+        "𝘛𝘩𝘶𝘮𝘣𝘯𝘢𝘪𝘭 𝘋𝘦𝘭𝘦𝘵𝘦𝘥 ✓ 🗑️.\n\n👉 𝑻𝒓𝒚 𝒖𝒔𝒊𝒏𝒈 /settings 𝒕𝒐 𝒈𝒆𝒕 𝒎𝒐𝒓𝒆 𝒄𝒐𝒏𝒕𝒓𝒐𝒍."
     )
 
 
@@ -933,7 +933,7 @@ async def booted(client):
     chats = get_val("ALD_USR")
     for i in chats:
         try:
-            await client.send_message(i, "The bot is booted and is ready to use.")
+            await client.send_message(i, "BOT RESTART DONE ✓.")
         except Exception:
             torlog.info(f"Not found the entity {i}")
 
