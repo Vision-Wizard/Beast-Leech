@@ -29,7 +29,7 @@ no = "❌"
 yes = "✅"
 # Central object is not used its Acknowledged
 tordb = TorToolkitDB()
-header = '<b>TorToolKitX by <a href="https://github.com/KangersHub/TorToolkitX">KangersHub</a></b>\n<u>USER SETTINGS MENU - v1</u>'
+header = '<b>SETTINGS MENU FOR USER 👨</b>\n\n 🌴 <b><a href="https://t.me/TGFilmZone">TGFilmZone</a></b>'
 
 
 async def handle_user_setting_callback(e):
@@ -164,7 +164,7 @@ async def handle_user_settings(e, edit=False, msg="", submenu=None, sender_id=No
 
         if edit:
             rmess = await e.edit(
-                header + "\nEnjoiii.\n" + msg,
+                header + "\n⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃\n" + msg,
                 parse_mode="html",
                 buttons=menu,
                 link_preview=False,
@@ -172,7 +172,7 @@ async def handle_user_settings(e, edit=False, msg="", submenu=None, sender_id=No
             )
         else:
             rmess = await e.reply(
-                header + "\nEnjoiii.\n",
+                header + "\n⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃⁃\n",
                 parse_mode="html",
                 buttons=menu,
                 link_preview=False,
