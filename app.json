@@ -72,7 +72,7 @@
     },
     "MAX_YTPLAYLIST_SIZE": {
       "description": " Max size of a playlist that is allowed (Number of videos)",
-      "value": "20",
+      "value": "40",
       "required": false
     },
     "MAX_TORRENT_SIZE": {
