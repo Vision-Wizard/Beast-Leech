@@ -192,14 +192,14 @@ async def rclone_upload(
 
         buttons = []
 
-        file_link = f"https://drive.google.com/file/d/{gid[0]}/view"
-        buttons.append([KeyboardButtonUrl("Drive URL", file_link)])
+        #file_link = f"https://drive.google.com/file/d/{gid[0]}/view"
+        #buttons.append([KeyboardButtonUrl("🌍 DRIVE LINK 🌍", file_link)])
         gd_index = get_val("GD_INDEX_URL")
         if gd_index:
             index_link = "{}/{}".format(gd_index.strip("/"), gid[1])
             index_link = requote_uri(index_link)
             torlog.info("index link " + str(index_link))
-            buttons.append([KeyboardButtonUrl("Index URL", index_link)])
+            buttons.append([KeyboardButtonUrl("🗳️ INDEX LINK 🗳️", index_link)])
 
         ul_size = calculate_size(path)
         transfer[0] += ul_size
