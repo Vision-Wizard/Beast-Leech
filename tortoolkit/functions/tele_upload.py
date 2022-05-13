@@ -72,7 +72,7 @@ async def upload_handel(
 
         try:
             message = await message.edit(
-                "{}\n\n**Found** {} **files for this Telegram Upload**".format(
+                "{}\n\n**🔍 Found** {} **files for this Telegram Upload**".format(
                     message.text, len(directory_contents)
                 )
             )
@@ -126,7 +126,7 @@ async def upload_handel(
             updb.deregister_upload(message.chat_id, message.id)
 
     else:
-        logging.info("Uploading the file ⏳: {}".format(path))
+        logging.info("Uploading the file..⏳:{}".format(path))
         if os.path.getsize(path) > get_val("TG_UP_LIMIT"):
             # the splitted file will be considered as a single upload ;)
 
