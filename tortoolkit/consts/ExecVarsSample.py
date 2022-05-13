@@ -37,12 +37,8 @@ except:
         REMAINING_STR = "▱"
 
         # DB URI for access
-        DATABASE_URL = (
-            "dbname=tortk user=postgres password=your-pass host=127.0.0.1 port=5432"
-        )
-
         # UNCOMMENT THE BELOW LINE WHEN USING CONTAINER AND COMMENT THE UPPER LINE
-        # DATABASE_URL = "postgres://mlpsfzvhwkjbvb:bdf333e8b52041560be5238f0748643485cbdd7252dd65b3b699bb676d1439b1@ec2-99-80-170-190.eu-west-1.compute.amazonaws.com:5432/d4ts4auv6kddnm"
+        DATABASE_URL = "postgres://mlpsfzvhwkjbvb:bdf333e8b52041560be5238f0748643485cbdd7252dd65b3b699bb676d1439b1@ec2-99-80-170-190.eu-west-1.compute.amazonaws.com:5432/d4ts4auv6kddnm"
 
         # MEGA CONFIG
         MEGA_ENABLE = False
