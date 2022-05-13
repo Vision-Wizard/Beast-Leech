@@ -65,13 +65,7 @@ except:
         DEFAULT_TIMEOUT = "leech"
 
         # For vps set path here or you can use runtime too
-        RCLONE_CONFIG = "[LEECH PRO]
-    type = drive
-    scope = drive
-    root_folder_id =
-    token = {"access_token":"ya29.A0ARrdaM8sYBedhLQPdPBMvp0RBHQNzdqBxI0PQSIcCZibDhSsuWikkCBbDPD0C8YPp4INY6A0_I9_taROWZCqWDC5OcwNNnrOOsgeiqtlK2vWC2WSSaWu-mViB1ZUYQUKKVf_L1X-QUg2uCFJS_mWEnpVpUhm","token_type":"Bearer","refresh_token":"1//0gKrLkzZxC3pOCgYIARAAGBASNwF-L9IrbUegaESDxH5TSreETokH3TIeeEkaPliMj2qU0-v9PeUnRBi3PDcJAoe8NUCHH6MfH9k","expiry":"2022-05-10T09:35:46.589105363Z"}
-    team_drive = 0AAGKChGX7yw2Uk9PVA"
-
+        RCLONE_CONFIG = ""
         # Name of the RCLONE drive from the config
         DEF_RCLONE_DRIVE = "LEECH PRO"
 
