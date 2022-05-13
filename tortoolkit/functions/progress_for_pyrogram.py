@@ -68,7 +68,7 @@ async def progress_for_pyrogram(
 
         tmp = (
             progress
-            + "**📤 Done ✓**:{0}\n\n**🥏 Total:** {1}\n\n🚀 **Speed**: {2}/s\n\n** 🕛ETA:** {3}\n\n** 🖥️Using engine:** Pyrogram".format(
+            + "**📤 Done ✓**:{0}\n\n**🥏 Total:** {1}\n\n🚀 **Speed**: {2}/s\n\n**🕛 ETA:** {3}\n\n** 🖥️ Using engine:** Pyrogram".format(
                 human_readable_bytes(current),
                 human_readable_bytes(total),
                 human_readable_bytes(speed),
