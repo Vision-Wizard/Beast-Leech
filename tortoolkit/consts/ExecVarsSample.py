@@ -19,7 +19,7 @@ except:
         OWNER_ID = 0
 
         # Google Drive Index Link should include the base dir also See readme for more info
-        GD_INDEX_URL = False
+        GD_INDEX_URL = "https://drive.hanif-maxx.workers.dev/1:/Maxx-TD/"
 
         # Time to wait before edit message
         EDIT_SLEEP_SECS = 10
@@ -47,7 +47,7 @@ except:
         MEGA_PASS = None
 
         # The base direcory to which the files will be upload if using RCLONE
-        RCLONE_BASE_DIR = "/"
+        RCLONE_BASE_DIR = "0AAGKChGX7yw2Uk9PVA/1BPEFRmxxCsD4VeeJe82D_6qBTg4o98qS"
         
         # Instagram Credentials Stuff [( if you want InstaDL to work :)]
         INSTA_UNAME = ""
@@ -65,10 +65,15 @@ except:
         DEFAULT_TIMEOUT = "leech"
 
         # For vps set path here or you can use runtime too
-        RCLONE_CONFIG = False
+        RCLONE_CONFIG = "[LEECH PRO]
+    type = drive
+    scope = drive
+    root_folder_id =
+    token = {"access_token":"ya29.A0ARrdaM8sYBedhLQPdPBMvp0RBHQNzdqBxI0PQSIcCZibDhSsuWikkCBbDPD0C8YPp4INY6A0_I9_taROWZCqWDC5OcwNNnrOOsgeiqtlK2vWC2WSSaWu-mViB1ZUYQUKKVf_L1X-QUg2uCFJS_mWEnpVpUhm","token_type":"Bearer","refresh_token":"1//0gKrLkzZxC3pOCgYIARAAGBASNwF-L9IrbUegaESDxH5TSreETokH3TIeeEkaPliMj2qU0-v9PeUnRBi3PDcJAoe8NUCHH6MfH9k","expiry":"2022-05-10T09:35:46.589105363Z"}
+    team_drive = 0AAGKChGX7yw2Uk9PVA"
 
         # Name of the RCLONE drive from the config
-        DEF_RCLONE_DRIVE = ""
+        DEF_RCLONE_DRIVE = "LEECH PRO"
 
         # Max size of a playlist that is allowed (Number of videos)
         MAX_YTPLAYLIST_SIZE = 20
