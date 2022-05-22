@@ -200,16 +200,16 @@ input[type="submit"]:hover, input[type="submit"]:focus{
     <header>
       <div class="brand">
         <img
-          src="https://telegra.ph/file/69e1118355aac6913ab1b.jpg"
+          src="https://telegra.ph/file/bab8f6f72e170f581358e.jpg"
           alt="logo"
         />
-        <a href="https://t.me/KangersHub"> 
-          <h2 class="name">TorToolkitX</h2>
+        <a href="https://telegram.dog/TGFilmZone"> 
+          <h2 class="name">RANGO ZEX</h2>
         </a>
       </div>
       <div class="social">
-        <a href="https://github.com/KangersHub/TortoolkitX"><i class="fab fa-github"></i></a>
-        <a href="https://t.me/KangersHub"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/NinjaTg/NinjaTg"><i class="fab fa-github"></i></a>
+        <a href="https://Telegram.dog/RangoZex"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
     <section>
@@ -539,16 +539,16 @@ section span{
     <header>
       <div class="brand">
         <img
-          src="https://telegra.ph/file/69e1118355aac6913ab1b.jpg"
+          src="https://telegra.ph/file/bab8f6f72e170f581358e.jpg"
           alt="logo"
         />
-        <a href="https://t.me/KangersHub">
-          <h2 class="name">TorToolkitX</h2>
+        <a href="https://Telegram.dog/TGFilmZone">
+          <h2 class="name">TGFilmZone</h2>
         </a>
       </div>
       <div class="social">
-        <a href="https://github.com/https://github.com/KangersHub/TorToolkitX"><i class="fab fa-github"></i></a>
-        <a href="https://t.me/KangersHub"><i class="fab fa-telegram"></i></a>
+        <a href="https://github.com/RangoZex/RangoZex"><i class="fab fa-github"></i></a>
+        <a href="https://telegram.dog/RangoZex"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
     <section>
@@ -721,7 +721,7 @@ async def set_priority(request):
 @routes.get("/")
 async def homepage(request):
     return web.Response(
-        text='<h1>🤗TorToolkitX webserver is Up and Running successfully🟢</h1>\n<h2>⚡See TorToolkitX on <a href="https://github.com/KangersHub/TorToolkitX">@GitHub</a></h2>\n<h2>🥲Join KangersHub <a href="https://t.me/KangersHub">TG channel</a></h2>',
+        text='<h1>🤗 Leech Pro webserver is Up and Running successfully🟢</h1>\n<h2>⚡See MaxxBotsOfficial<a href="https://github.com/MaxxBots/Maxxbots">@GitHub</a></h2>\n<h2>🌲 JOIN HERE 🌲 <a href="https://t.me/TGFilmZone">CHANNEL</a></h2>',
         content_type="text/html",
     )
 
