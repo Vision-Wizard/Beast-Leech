@@ -581,7 +581,7 @@ async def handle_exec_message_f(e):
         else:
             await message.reply(OUTPUT)
     else:
-        await message.reply("Only for owner")
+        await message.reply("Only for owner 🙂")
 
 
 async def handle_pincode_cb(e):
@@ -601,7 +601,7 @@ async def handle_pincode_cb(e):
 
 
 async def upload_document_f(message):
-    imsegd = await message.reply("processing ...")
+    imsegd = await message.reply("Processing.... ⏳")
     imsegd = await message.client.get_messages(message.chat_id, ids=imsegd.id)
     if await is_admin(
         message.client, message.sender_id, message.chat_id, force_owner=True
@@ -613,7 +613,7 @@ async def upload_document_f(message):
             )
             # torlog.info(recvd_response)
     else:
-        await message.reply("Only for owner")
+        await message.reply("Only for owner 🙂")
     await imsegd.delete()
 
 
@@ -907,7 +907,7 @@ def term_handler(signum, frame, client):
     async def term_async():
         omess = None
         st = Status().Tasks
-        msg = "Bot Rebooting Re Add your Tasks\n\n"
+        msg = "Bot Rebooting Re-Add your Tasks\n\n"
         for i in st:
             if not await i.is_active():
                 continue
