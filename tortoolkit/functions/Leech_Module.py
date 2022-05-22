@@ -167,7 +167,7 @@ async def check_link(msg, rclone=False, is_zip=False, extract=False, prev_msg=No
 
     elif msg.raw_text is not None:
         if msg.raw_text.lower().startswith("magnet:"):
-            rmess = await omess.reply("Scanning....")
+            rmess = await omess.reply("Scanning.... 🔎")
 
             mgt = get_magnets(msg.raw_text.strip())
             torrent_return = await QBittorrentWrap.register_torrent(
@@ -315,7 +315,7 @@ async def check_link(msg, rclone=False, is_zip=False, extract=False, prev_msg=No
             msg.raw_text
             url = msg.raw_text
 
-            rmsg = await omess.reply("**Processing the link...**")
+            rmsg = await omess.reply("**Processing the link.... ⏳**")
 
             path = None
             re_name = None
@@ -341,7 +341,7 @@ async def check_link(msg, rclone=False, is_zip=False, extract=False, prev_msg=No
                         await errored_message(omess, rmsg)
                         return
                     else:
-                        await rmsg.edit(f"**Found direct:** `{url}`")
+                        await rmsg.edit(f"**Found direct:**  `{url}`")
                         await aio.sleep(2)
 
                 try:
@@ -457,23 +457,23 @@ async def handle_zips(path, is_zip, rmess, split=True):
     if is_zip:
         try:
             await rmess.edit(
-                rmess.text + "\nStarting to Zip the contents. Please wait."
+                rmess.text + "\n**Starting to Zip the contents. Please wait...**⏳"
             )
             zip_path = await add_to_zip(path, get_val("TG_UP_LIMIT"), split)
 
             if zip_path is None:
-                await rmess.edit(rmess.text + "\nZip failed. Falback to normal.")
+                await rmess.edit(rmess.text + "\n**Zip failed. Falback to normal.**")
                 return False
 
             if os.path.isdir(path):
                 shutil.rmtree(path)
             if os.path.isfile(path):
                 os.remove(path)
-            await rmess.edit(rmess.text + "\n\n**Zipping done. Now uploading.**")
+            await rmess.edit(rmess.text + "\n\n**Zipping done ✓ \nNow uploading... ⤴️**")
             await clear_stuff(path)
             return zip_path
         except:
-            await rmess.edit(rmess.text + "\nZip failed. Falback to normal.")
+            await rmess.edit(rmess.text + "\n**Zip failed. Falback to normal**.")
             return False
     else:
         return path
@@ -531,7 +531,7 @@ async def handle_ext_zip(path, rmess, omess):
 
 
 async def errored_message(e, reason):
-    msg = f"<a href='tg://user?id={e.sender_id}'>Done</a>\nYour Download Failed."
+    msg = f"** Hey 👋 <a href='tg://user?id={e.sender_id}'>Done 🙂</a>\n\nYour Download Failed. 🥲**"
     if reason is not None:
         await reason.reply(msg, parse_mode="html")
     else:
@@ -539,17 +539,17 @@ async def errored_message(e, reason):
 
 
 async def print_files(e, files, thash=None, path=None, size=None):
-    msg = f"<a href='tg://user?id={e.sender_id}'>Done</a>\n#uploads\n"
+    msg = f"<a href='tg://user?id={e.sender_id}'>Done ✓</a>\n#uploads\n"
 
     if path is not None and size is None:
         size = calculate_size(path)
         transfer[0] += size
         size = human_readable_bytes(size)
-        msg += f"Uploaded Size:- {str(size)}\n\n"
+        msg += f"** 💽Uploaded Size:** `{str(size)}`\n\n"
     elif size is not None:
         transfer[0] += size
         size = human_readable_bytes(size)
-        msg += f"Uploaded Size:- {str(size)}\n\n"
+        msg += f"**💽 Uploaded Size:** `{str(size)}`\n\n"
 
     if len(files) == 0:
         return
