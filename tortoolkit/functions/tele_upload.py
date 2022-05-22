@@ -72,7 +72,7 @@ async def upload_handel(
 
         try:
             message = await message.edit(
-                "{}\n\n**🔍 Found** {} **files for this Telegram Upload**".format(
+                "{}\n\n**🔍 Found** {} **files**\n\nNow Uploading in TG...📤**".format(
                     message.text, len(directory_contents)
                 )
             )
@@ -93,7 +93,7 @@ async def upload_handel(
             data = "upcancel {} {} {}".format(
                 message.chat_id, message.id, sup_mes.sender_id
             )
-            buts = [KeyboardButtonCallback("Cancel upload.", data.encode("UTF-8"))]
+            buts = [KeyboardButtonCallback("❌ Cancel Uploading.", data.encode("UTF-8"))]
             message = await message.edit(buttons=buts)
 
         for file in directory_contents:
@@ -147,13 +147,13 @@ async def upload_handel(
 
             if ftype == "video":
                 todel = await message.reply(
-                    "**FILE LARGER THAN 2GB, SPLITTING NOW...**\n**Using Algo FFMPEG VIDEO SPLIT**"
+                    "**FILE LARGER THAN 2GB, SPLITTING NOW...⏳**\n\n**Using Algo FFMPEG VIDEO SPLIT**"
                 )
                 split_dir = await vids_helpers.split_file(path, get_val("TG_UP_LIMIT"))
                 await todel.delete()
             else:
                 todel = await message.reply(
-                    "**FILE LARGER THAN 2GB, SPLITTING NOW...**\n**`Using Algo FFMPEG ZIP SPLIT`**"
+                    "**FILE LARGER THAN 2GB, SPLITTING NOW...⏳**\n\n**`Using Algo FFMPEG ZIP SPLIT`**"
                 )
                 split_dir = await zip7_utils.split_in_zip(path, get_val("TG_UP_LIMIT"))
                 await todel.delete()
@@ -178,7 +178,7 @@ async def upload_handel(
                 data = "upcancel {} {} {}".format(
                     message.chat_id, message.id, sup_mes.sender_id
                 )
-                buts = [KeyboardButtonCallback("Cancel upload.", data.encode("UTF-8"))]
+                buts = [KeyboardButtonCallback("❌ Cancel Uploading.", data.encode("UTF-8"))]
                 await message.edit(buttons=buts)
 
             for file in dircon:
@@ -235,7 +235,7 @@ async def upload_handel(
                 data = "upcancel {} {} {}".format(
                     message.chat_id, message.id, sup_mes.sender_id
                 )
-                buts = [KeyboardButtonCallback("Cancel upload.", data.encode("UTF-8"))]
+                buts = [KeyboardButtonCallback("❌ Cancel Uploading.", data.encode("UTF-8"))]
                 await message.edit(buttons=buts)
             # print(updb)
             if black_list_exts(path):
@@ -319,10 +319,10 @@ async def upload_a_file(
     uploader_id = None
     if queue is not None:
         torlog.info(f"Waiting for the worker here for {file_name}")
-        msg = await msg.edit(f"{msg.text}\nWaiting for a uploaders to get free... ")
+        msg = await msg.edit(f"**{msg.text}**\n\n__Waiting for a uploaders to get free...⏳ __")
         uploader_id = await queue.get()
         torlog.info(
-            f"Waiting over for the worker here for {file_name} aquired worker {uploader_id}"
+            f"Waiting over for the worker here for **{file_name}** aquired worker {uploader_id}"
         )
 
     out_msg = None
@@ -554,14 +554,14 @@ async def upload_single_file(
                 ]
             )
             message_for_progress_display = await message.reply_text(
-                "**✅ Starting upload of**: `{}`".format(os.path.basename(path)),
+                "**✅ Started Uploading..⏳**:\n\n**File Name**: `{}`".format(os.path.basename(path)),
                 reply_markup=markup,
             )
 
             if queue is not None:
                 torlog.info(f"Waiting for the worker here for {file_name}")
                 message_for_progress_display = await message_for_progress_display.edit(
-                    f"{message_for_progress_display.text}\nWaiting for a uploaders to get free... "
+                    f"{message_for_progress_display.text}\n\n__Waiting for a uploaders to get free... ⏳__"
                 )
                 uploader_id = await queue.get()
                 torlog.info(
