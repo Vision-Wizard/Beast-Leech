@@ -183,15 +183,15 @@ async def create_quality_menu(
 
 async def handle_ytdl_command(e: MessageLike):
     if not e.is_reply:
-        await e.reply("Reply to a youtube video link.")
+        await e.reply("Rᴇᴘʟʏ ᴛᴏ ᴀ Yᴏᴜᴛᴜʙᴇ Vɪᴅᴇᴏ Lɪɴᴋ.")
         return
     msg = await e.get_reply_message()
 
     tsp = time.time()
-    buts = [[KeyboardButtonCallback("To Telegram", data=f"ytdlselect tg {tsp}")]]
+    buts = [[KeyboardButtonCallback("To Telegram 🌲", data=f"ytdlselect tg {tsp}")]]
     if await get_config() is not None:
         buts.append(
-            [KeyboardButtonCallback("To Drive", data=f"ytdlselect drive {tsp}")]
+            [KeyboardButtonCallback("To Drive 🌨️", data=f"ytdlselect drive {tsp}")]
         )
 
     msg1 = await e.reply(
@@ -403,17 +403,17 @@ async def handle_ytdl_file_download(e: MessageLike):
 
 async def handle_ytdl_playlist(e: MessageLike) -> None:
     if not e.is_reply:
-        await e.reply("Reply to a youtube playlist link.")
+        await e.reply("Rᴇᴘʟʏ ᴛᴏ ᴀ Yᴏᴜᴛᴜʙᴇ ᴘʟᴀʏʟɪsᴛ Lɪɴᴋ.")
         return
     url = await e.get_reply_message()
     url = url.text.strip()
     cmd = f"yt-dlp -i --flat-playlist --dump-single-json --no-warnings {url}"
 
     tsp = time.time()
-    buts = [[KeyboardButtonCallback("To Telegram", data=f"ytdlselect tg {tsp}")]]
+    buts = [[KeyboardButtonCallback("Upload in Telegram 🌲", data=f"ytdlselect tg {tsp}")]]
     if await get_config() is not None:
         buts.append(
-            [KeyboardButtonCallback("To Drive", data=f"ytdlselect drive {tsp}")]
+            [KeyboardButtonCallback("To Cloud 🌨️", data=f"ytdlselect drive {tsp}")]
         )
 
     msg = await e.reply(
@@ -560,7 +560,7 @@ async def handle_ytdl_playlist_down(e: MessageLike) -> None:
 
             if err and ofiles < 2:
                 await e.reply(
-                    f"Failed to download the audios <code>{err}</code>",
+                    f"Failed to download the audios:\n\n<code>{err}</code>",
                     parse_mode="html",
                 )
             else:
@@ -590,7 +590,7 @@ async def handle_ytdl_playlist_down(e: MessageLike) -> None:
 
             if err and ofiles < 2:
                 await e.reply(
-                    f"Failed to download the videos <code>{err}</code>",
+                    f"Failed to download the videos\n\n<code>{err}</code>",
                     parse_mode="html",
                 )
             else:
